@@ -1,8 +1,11 @@
 $(document).ready(function () {
 
-    $("#submitBtn").click(function() {
-        var userProfile = $("#userInput").val();
-        getGitProfile(userProfile);
+    $("#userInput").keypress(function(event) {
+        if (event.which === 13) {
+            var userProfile = $("#userInput").val();
+            getGitProfile(userProfile);
+        }
+        
     });
 
 });
@@ -30,22 +33,26 @@ async function getGitProfile(userProfile) {
 
     $("#userFollowers").text(" " + data.followers + " Followers")
     $("#userFollowing").text(" " + data.following + " Following")
+
+    $("#allRepos").attr("href", "https://github.com/" + userProfile + "?tab=repositories" )
     
-    
+
     const reposUrl = "https://api.github.com/users/" + userProfile + "/repos#"
     const reposResponde = await fetch(reposUrl);
     const reposData = await reposResponde.json();
+
 
     var statusHTML = "";
 
     $.each(reposData , function(i, status){
 
         statusHTML += '<tr>';
-        statusHTML += '<td>' + status.id + '</td>';
-        statusHTML += '<td>' + status.name + '</td>';
-        statusHTML += '<td>' + status.html_url + '</td>';
-        statusHTML += '<td>' + status.language + '</td>';
-        statusHTML += '</tr>';
+        /* statusHTML += '<td>' + status.id + '</td>'; */        
+        /* statusHTML += '<td>' + status.html_url + '</td>'; */
+        /* statusHTML += '<td>' + status.language + '</td>'; */
+        /* statusHTML += '<td>' + status.name + '</td>';  */       
+        statusHTML += '<td><a href="' + status.html_url +'">' + status.name  + '</a></td>'
+        statusHTML += '</tr>';      
 
     })
 
