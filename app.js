@@ -1,8 +1,8 @@
 $(document).ready(function () {
 
-    $("#userInput").keypress(function(event) {
+    $("#table-search").keypress(function(event) {
         if (event.which === 13) {
-            var userProfile = $("#userInput").val();
+            var userProfile = $("#table-search").val();
             getGitProfile(userProfile);
         }
         
@@ -10,14 +10,6 @@ $(document).ready(function () {
 
 });
 
-$(document).ready(function () {
-
-    $("#urlBtn").click(function() {
-        var userUrl = $("#userUrl").val();
-        getGitProfile(userUrl);
-    });
-
-});
 
 async function getGitProfile(userProfile) {
 
@@ -46,12 +38,14 @@ async function getGitProfile(userProfile) {
 
     $.each(reposData , function(i, status){
 
-        statusHTML += '<tr>';
-        /* statusHTML += '<td>' + status.id + '</td>'; */        
-        /* statusHTML += '<td>' + status.html_url + '</td>'; */
-        /* statusHTML += '<td>' + status.language + '</td>'; */
-        /* statusHTML += '<td>' + status.name + '</td>';  */       
-        statusHTML += '<td><a href="' + status.html_url +'">' + status.name  + '</a></td>'
+        statusHTML += '<tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">';
+        statusHTML += '<th scope="row" class="px-6 py-4 font-medium text-gray-900 dark:text-white whitespace-nowrap">' + status.name + '</th>';
+        statusHTML += '<td class="px-6 py-4">' + status.language + '</td>';
+        statusHTML += '<td class="px-6 py-4">' + status.watchers_count + '</td>';
+        statusHTML += '<td class="px-6 py-4">' + status.watchers + '</td>';
+        statusHTML += '<td class="px-6 py-4">' + status.forks + '</td>';
+        statusHTML += '<td class="px-6 py-4">' + status.pushed_at + '</td>';
+        statusHTML += '<td class="px-6 py-4 text-right"><a href="' + status.html_url + '" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">View More</a></td>';        
         statusHTML += '</tr>';      
 
     })
