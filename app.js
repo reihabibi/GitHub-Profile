@@ -1,7 +1,10 @@
 $(document).ready(function () {
 
+    $("#content").hide();
+
     $("#table-search").keypress(function (event) {
         if (event.which === 13) {
+            var userProfile = "reihabibi";
             var userProfile = $("#table-search").val();
             getGitProfile(userProfile);
         }
@@ -11,6 +14,8 @@ $(document).ready(function () {
 });
 
 async function getGitProfile(userProfile) {
+
+    $("#content").hide();
 
     const apiUrl = "https://api.github.com/users/" + userProfile
     const responde = await fetch(apiUrl);
@@ -45,12 +50,14 @@ async function getGitProfile(userProfile) {
         statusHTML += '<td class="px-6 py-4">' + status.watchers + '</td>';
         statusHTML += '<td class="px-6 py-4">' + status.forks + '</td>';
         statusHTML += '<td class="px-6 py-4">' + status.pushed_at + '</td>';
-        statusHTML += '<td class="px-6 py-4 text-right"><a href="' + status.html_url + '" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">View More</a></td>';
+        statusHTML += '<td class="px-6 py-4 text-right"><a href="' + status.html_url + '" target="_blank" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">View More</a></td>';
         statusHTML += '</tr>';
 
     })
     $('tbody').html(statusHTML);
 
+
+    $("#content").fadeIn(400);
 
     console.log(reposUrl);
     console.log(apiUrl);
