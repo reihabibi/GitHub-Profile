@@ -1,139 +1,136 @@
-<!DOCTYPE html>
-<html lang="en">
-
+<!doctype html>
+<html>
 <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>GitHub Profile</title>
-    <link rel="stylesheet" href="https://unpkg.com/flowbite@1.4.2/dist/flowbite.min.css" />
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://unpkg.com/flowbite@1.4.2/dist/flowbite.min.css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 </head>
+<body>
 
-<body class="flex flex-col h-screen">
 
     <!-- NAVBAR -->
-    <div class="flex items-center grid grid-cols-2 md:grid-cols-3 items-center w-full py-5 px-10 mb-5 bg-slate-900">
+    <div class="flex items-center grid grid-cols-2 md:grid-cols-3 items-center w-full py-5 px-10 mb-5 border-b-2">
         <div class="flex items-center text-gray-700 dark:text-gray-200">
             <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path fill-rule="evenodd" clip-rule="evenodd" style="fill: #ffffff"
+                <path fill-rule="evenodd" clip-rule="evenodd"
                     d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
             </svg>
-            <h1 class="text-white text-lg px-2">User Profile</h1>
+            <h1 class="text-gray-800 text-lg px-2">User Profile</h1>
         </div>
         <div class="justify-self-stretch">
             <input id="table-search" class="w-full bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg"
                 type="text" placeholder="Serach User..." />
         </div>
         <div class="flex md:justify-end">
-            <a href="https://github.com/reihabibi/GitHub-Profile" rel="noopener noreferrer"
-                class="text-white text-sm">view Github-Code</a>
+            <a href="https://github.com/reihabibi/GitHub-Profile" target="_blank"
+                class="text-gray-800  text-sm">view Github-Code</a>
         </div>
     </div>
 
-    <!-- Profile -->
-    <div class="grid sm:my-10 sm:px-10 xl:grid-cols-3">
-        <!--    Profile Card -->
-        <div class="max-w-sm mx-auto overflow-hidden bg-white rounded-lg shadow-lg dark:bg-gray-800">
-            <img id="userImg" class="object-cover object-center w-full h-60"
-                src="https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80"
-                alt="avatar" />
+    <div id="content">
 
-            <div class="flex items-center px-6 py-3 bg-gray-900">
-                <a id="userUrl" href="#">
-                    <h1 id="userName" class="mx-3 text-lg font-semibold text-white">
+   
+    <!-- USER PROFILE -->
+  <section class="bg-white dark:bg-gray-800">
+    <div class="container px-6 py-8 mx-auto">
+        <div class="items-center lg:flex">
+
+            <div class="mr-8 lg:mt-0">
+                <div class="flex items-center justify-center sm:justify-right">
+                    <div class="max-w-lg">
+                        <img id="userImg" class="object-cover object-center w-60 h-60 rounded-md shadow" src="https://images.unsplash.com/photo-1484399172022-72a90b12e3c1?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1500&q=80" alt="">
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <h2 id="fullName" class="text-3xl font-bold text-gray-800 dark:text-gray-100">User Name</h2>
+
+                <a id="userUrl" href="#" target="_blank">
+                    <h1 id="userName" class="mt-1 text-gray-500 dark:text-gray-400 lg:max-w-md">
                         @username
                     </h1>
                 </a>
-            </div>
 
-            <div class="px-6 py-4">
-                <a id="userUrl" href="#">
-                    <h1 id="fullName" class="text-xl font-semibold text-gray-800 dark:text-white">
-                        Patterson johnson
-                    </h1>
-                </a>
+                <p id="userBio" class="mt-4 text-gray-500 dark:text-gray-400 lg:max-w-md">
+                    Hi I am jane , software engineer </p>
 
-                <p id="userBio" class="py-2 text-gray-700 dark:text-gray-400">
-                    Full Stack maker & UI / UX Designer , love hip hop music Author of
-                    Building UI.
-                </p>
+                <div class="flex inline-flex mt-6 gap-10">
 
-                <div class="flex items-center mt-4 text-gray-700 dark:text-gray-200">
-                    <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24" fill="none"
-                        xmlns="http://www.w3.org/2000/svg">
-                        <path fill-rule="evenodd" clip-rule="evenodd"
-                            d="M12.0122 5.57169L10.9252 4.48469C8.77734 2.33681 5.29493 2.33681 3.14705 4.48469C0.999162 6.63258 0.999162 10.115 3.14705 12.2629L11.9859 21.1017L11.9877 21.0999L12.014 21.1262L20.8528 12.2874C23.0007 10.1395 23.0007 6.65711 20.8528 4.50923C18.705 2.36134 15.2226 2.36134 13.0747 4.50923L12.0122 5.57169ZM11.9877 18.2715L16.9239 13.3352L18.3747 11.9342L18.3762 11.9356L19.4386 10.8732C20.8055 9.50635 20.8055 7.29028 19.4386 5.92344C18.0718 4.55661 15.8557 4.55661 14.4889 5.92344L12.0133 8.39904L12.006 8.3918L12.005 8.39287L9.51101 5.89891C8.14417 4.53207 5.92809 4.53207 4.56126 5.89891C3.19442 7.26574 3.19442 9.48182 4.56126 10.8487L7.10068 13.3881L7.10248 13.3863L11.9877 18.2715Z"
-                            fill="currentColor" />
-                    </svg>
-                    <h1 id="userFollowers" class="px-2 text-sm">8 Followers</h1>
-                </div>
-
-                <div class="flex items-center mt-4 text-gray-700 dark:text-gray-200">
-                    <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24" fill="none"
-                        xmlns="http://www.w3.org/2000/svg">
-                        <path fill-rule="evenodd" clip-rule="evenodd"
-                            d="M12.0122 5.57169L10.9252 4.48469C8.77734 2.33681 5.29493 2.33681 3.14705 4.48469C0.999162 6.63258 0.999162 10.115 3.14705 12.2629L11.9859 21.1017L11.9877 21.0999L12.014 21.1262L20.8528 12.2874C23.0007 10.1395 23.0007 6.65711 20.8528 4.50923C18.705 2.36134 15.2226 2.36134 13.0747 4.50923L12.0122 5.57169ZM11.9877 18.2715L16.9239 13.3352L18.3747 11.9342L18.3762 11.9356L19.4386 10.8732C20.8055 9.50635 20.8055 7.29028 19.4386 5.92344C18.0718 4.55661 15.8557 4.55661 14.4889 5.92344L12.0133 8.39904L12.006 8.3918L12.005 8.39287L9.51101 5.89891C8.14417 4.53207 5.92809 4.53207 4.56126 5.89891C3.19442 7.26574 3.19442 9.48182 4.56126 10.8487L7.10068 13.3881L7.10248 13.3863L11.9877 18.2715Z"
-                            fill="currentColor" />
-                    </svg>
-                    <h1 id="userFollowing" class="px-2 text-sm">26 Following</h1>
-                </div>
-
-                <div class="flex items-center mt-4 text-gray-700 dark:text-gray-200">
-                    <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24" fill="none"
-                        xmlns="http://www.w3.org/2000/svg">
-                        <path fill-rule="evenodd" clip-rule="evenodd"
-                            d="M7 5C7 3.89543 7.89543 3 9 3C10.1046 3 11 3.89543 11 5C11 5.74028 10.5978 6.38663 10 6.73244V14.0396H11.7915C12.8961 14.0396 13.7915 13.1441 13.7915 12.0396V10.7838C13.1823 10.4411 12.7708 9.78837 12.7708 9.03955C12.7708 7.93498 13.6662 7.03955 14.7708 7.03955C15.8753 7.03955 16.7708 7.93498 16.7708 9.03955C16.7708 9.77123 16.3778 10.4111 15.7915 10.7598V12.0396C15.7915 14.2487 14.0006 16.0396 11.7915 16.0396H10V17.2676C10.5978 17.6134 11 18.2597 11 19C11 20.1046 10.1046 21 9 21C7.89543 21 7 20.1046 7 19C7 18.2597 7.4022 17.6134 8 17.2676V6.73244C7.4022 6.38663 7 5.74028 7 5Z"
-                            fill="currentColor" />
-                    </svg>
-                    <h1 id="allRepos" class="px-2 text-sm">3 Public Repos</h1>
+                    <a class="flex items-center inline-flex gap-2">
+                        <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24" fill="none"xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M12.0122 5.57169L10.9252 4.48469C8.77734 2.33681 5.29493 2.33681 3.14705 4.48469C0.999162 6.63258 0.999162 10.115 3.14705 12.2629L11.9859 21.1017L11.9877 21.0999L12.014 21.1262L20.8528 12.2874C23.0007 10.1395 23.0007 6.65711 20.8528 4.50923C18.705 2.36134 15.2226 2.36134 13.0747 4.50923L12.0122 5.57169ZM11.9877 18.2715L16.9239 13.3352L18.3747 11.9342L18.3762 11.9356L19.4386 10.8732C20.8055 9.50635 20.8055 7.29028 19.4386 5.92344C18.0718 4.55661 15.8557 4.55661 14.4889 5.92344L12.0133 8.39904L12.006 8.3918L12.005 8.39287L9.51101 5.89891C8.14417 4.53207 5.92809 4.53207 4.56126 5.89891C3.19442 7.26574 3.19442 9.48182 4.56126 10.8487L7.10068 13.3881L7.10248 13.3863L11.9877 18.2715Z" fill="currentColor" /></svg>
+                        <p id="userFollowers">8 Followers </p>
+                    </a>
+                
+                    <a class="flex items-center inline-flex gap-2">
+                        <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"> <path fill-rule="evenodd" clip-rule="evenodd" d="M12.0122 5.57169L10.9252 4.48469C8.77734 2.33681 5.29493 2.33681 3.14705 4.48469C0.999162 6.63258 0.999162 10.115 3.14705 12.2629L11.9859 21.1017L11.9877 21.0999L12.014 21.1262L20.8528 12.2874C23.0007 10.1395 23.0007 6.65711 20.8528 4.50923C18.705 2.36134 15.2226 2.36134 13.0747 4.50923L12.0122 5.57169ZM11.9877 18.2715L16.9239 13.3352L18.3747 11.9342L18.3762 11.9356L19.4386 10.8732C20.8055 9.50635 20.8055 7.29028 19.4386 5.92344C18.0718 4.55661 15.8557 4.55661 14.4889 5.92344L12.0133 8.39904L12.006 8.3918L12.005 8.39287L9.51101 5.89891C8.14417 4.53207 5.92809 4.53207 4.56126 5.89891C3.19442 7.26574 3.19442 9.48182 4.56126 10.8487L7.10068 13.3881L7.10248 13.3863L11.9877 18.2715Z" fill="currentColor" /> </svg>
+                        <p id="userFollowing"> 8 Followers </p>
+                    </a>
+                    
+                    <a class="flex items-center inline-flex gap-2">
+                        <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24" fill="none"xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd"d="M7 5C7 3.89543 7.89543 3 9 3C10.1046 3 11 3.89543 11 5C11 5.74028 10.5978 6.38663 10 6.73244V14.0396H11.7915C12.8961 14.0396 13.7915 13.1441 13.7915 12.0396V10.7838C13.1823 10.4411 12.7708 9.78837 12.7708 9.03955C12.7708 7.93498 13.6662 7.03955 14.7708 7.03955C15.8753 7.03955 16.7708 7.93498 16.7708 9.03955C16.7708 9.77123 16.3778 10.4111 15.7915 10.7598V12.0396C15.7915 14.2487 14.0006 16.0396 11.7915 16.0396H10V17.2676C10.5978 17.6134 11 18.2597 11 19C11 20.1046 10.1046 21 9 21C7.89543 21 7 20.1046 7 19C7 18.2597 7.4022 17.6134 8 17.2676V6.73244C7.4022 6.38663 7 5.74028 7 5Z"fill="currentColor" /></svg>
+                        <p id="allRepos"> 8 Followers </p>
+                    </a>
+                    
                 </div>
             </div>
-        </div>
 
-        <!-- Table -->
-        <div class="relative xl:col-span-2 overflow-x-auto shadow-md sm:rounded-lg my-5">
-            <div class="p-4">
-                <div class="relative mt-1">
-                    <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
-                        <svg class="w-5 h-5 text-gray-500 dark:text-gray-400" fill="currentColor" viewBox="0 0 20 20"
-                            xmlns="http://www.w3.org/2000/svg">
-                            <path fill-rule="evenodd"
-                                d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
-                                clip-rule="evenodd"></path>
-                        </svg>
-                    </div>
-                    <input type="text" id="tableInput"
-                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-80 pl-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                        placeholder="Search for Repo" />
-                </div>
-            </div>
-            <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
-                <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
-                    <tr>
-                        <th scope="col" class="px-6 py-3">name</th>
-                        <th scope="col" class="px-6 py-3">language</th>
-                        <th scope="col" class="px-6 py-3">stars</th>
-                        <th scope="col" class="px-6 py-3">watching</th>
-                        <th scope="col" class="px-6 py-3">fork</th>
-                        <th scope="col" class="px-6 py-3">last push</th>
-                        <th scope="col" class="px-6 py-3">
-                            <span class="sr-only"></span>
-                        </th>
-                    </tr>
-                </thead>
-                <tbody id="tableID">
-                    <!-- Body Content -->
-                </tbody>
-            </table>
         </div>
     </div>
+</section>
 
 
-    <script src="tableSearch.js"></script>
-    <script src="app.js"></script>
-    <script src="https://unpkg.com/flowbite@1.4.2/dist/flowbite.js"></script>
+ <!-- Table -->
+ <div class="relative xl:col-span-2 overflow-x-auto shadow-md sm:rounded-lg my-5 lg:mx-5">
+    <div class="p-4">
+        <div class="relative mt-1">
+            <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+                <svg class="w-5 h-5 text-gray-500 dark:text-gray-400" fill="currentColor" viewBox="0 0 20 20"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd"
+                        d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
+                        clip-rule="evenodd"></path>
+                </svg>
+            </div>
+
+                <input type="text" id="tableInput"
+                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-80 pl-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                placeholder="Search for Repo" />
+
+            </div>
+    </div>
+    <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+        <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+            <tr>
+                <th scope="col" class="px-6 py-3">name</th>
+                <th scope="col" class="px-6 py-3">language</th>
+                <th scope="col" class="px-6 py-3">stars</th>
+                <th scope="col" class="px-6 py-3">watching</th>
+                <th scope="col" class="px-6 py-3">fork</th>
+                <th scope="col" class="px-6 py-3">last push</th>
+                <th scope="col" class="px-6 py-3">
+                    <span class="sr-only"></span>
+                </th>
+            </tr>
+        </thead>
+        <tbody id="tableID">
+            <!-- Body Content -->
+        </tbody>
+    </table>
+</div>
+</div>
+
+
+</div>
+
+
+
+
+<script src="app.js"></script>
+<script src="tableSearch.js"></script>
+<script src="https://unpkg.com/flowbite@1.4.2/dist/flowbite.js"></script>
+
 </body>
-
 </html>
