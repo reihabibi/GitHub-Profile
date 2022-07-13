@@ -43,14 +43,14 @@ async function getGitProfile(userProfile) {
 
     $.each(reposData, function (i, status) {
 
-        statusHTML += '<tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">';
-        statusHTML += '<th scope="row" class="px-6 py-4 font-medium text-gray-900 dark:text-white whitespace-nowrap">' + status.name + '</th>';
+        statusHTML += '<tr class="bg-white border-b ">';
+        statusHTML += '<th scope="row" class="px-6 py-4 font-medium text-gray-900 ">' + status.name + '</th>';
         statusHTML += '<td class="px-6 py-4">' + status.language + '</td>';
         statusHTML += '<td class="px-6 py-4">' + status.watchers_count + '</td>';
         statusHTML += '<td class="px-6 py-4">' + status.watchers + '</td>';
         statusHTML += '<td class="px-6 py-4">' + status.forks + '</td>';
         statusHTML += '<td class="px-6 py-4">' + status.pushed_at + '</td>';
-        statusHTML += '<td class="px-6 py-4 text-right"><a href="' + status.html_url + '" target="_blank" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">View More</a></td>';
+        statusHTML += '<td class="px-6 py-4 text-right"><a href="' + status.html_url + '" target="_blank" class="font-medium text-blue-600  hover:underline">View More</a></td>';
         statusHTML += '</tr>';
 
     })
